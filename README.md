@@ -36,6 +36,13 @@
   </kbd>
 </p>
 
+### More Projects
+<p align="center"> 
+  <kbd>
+    <a href="https://varadbhogayata.github.io" target="_blank"><img src="assets/img/load_more_projects.png">
+  </a>
+  </kbd>
+</p>
 :star: Star me on GitHub — it helps!
 
 ## Features 📋

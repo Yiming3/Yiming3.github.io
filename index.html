@@ -103,7 +103,7 @@
         <!-- mdi-av-web small
              mdi-av-my-library-books small-->
         <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+            class="mdi-av-my-library-books small"></i><span>Recent Projects</span></a>
       </li>
 
       <li class="bold">
@@ -187,7 +187,7 @@
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+            class="mdi-av-my-library-books small"></i><span>Recent Projects</span></a>
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
@@ -359,67 +359,105 @@
 
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
+      <h3 class="page-title white-text teal">Recent Projects</h3>
       <div class="container">
         <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/assets/img/map.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Map<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A software similar to Google Map.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> C++, OpenStreetMap, GTK</li>
-                  <li>Worked in a group of 3 to develop a large program similar to Google Maps in C++, utilizing the OSM (OpenStreetMap) database and API to draw geographical locations.</li>
-                  <li>Collaborated using GIT, learning effective design & communication skills for large-scale software development projects.</li>
-                  <li>Implemented algorithms such as Dijkstra's and A* to facilitate pathfinding and obtain optimal directions.</li>
-                  <li>Utilized GTK toolkit and EZGL graphics package to design GUI and allow interactive display of map.</li>
-                </ul>
-              </div>
+          <div class="row">
+            <div id="project-container">
             </div>
           </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="processor design" src="/assets/img/cpu.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Processor Design<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A 16-bit processor design similar to ARM architecture
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Verilog, ModelSim, Quartus</li>
-                  <li>Utilized Verilog to design a 16-bit processor that could do ARM similar instructions like add, sub, and conditional branch.</li>
-                  <li>Debugged and tested the project using ModelSim with different test cases.</li>
-                  <li>Created a basic ARM-like number-counting program using the processor on a FPGA with Quartus.</li>
-                </ul>
-              </div>
-            </div>
+          <div class="row center-align">
+            <a id="load-more" class="waves-effect waves-light btn">Load More</a>
           </div>
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
+
+    <!-- Javascripts generated with the help of curosr LLM -->
+    <!-- Took advantange of cursor auto complete -->
+    <!-- Prompts used: 
+      Generate a js list using my projects
+      Help me to debug iterating project details
+      -->
+    <script>
+      const projects = [
+        {
+          title: "Google Maps-like Software",
+          description: "A software similar to Google Maps developed in C++",
+          image: "/assets/img/map.png",
+          tools: ["C++", "OpenStreetMap", "GTK"],
+          details: [
+            "Worked in a group of 3 to develop a large program similar to Google Maps in C++, utilizing the OSM (OpenStreetMap) database and API to draw geographical locations.",
+            "Collaborated using GIT, learning effective design & communication skills for large-scale software development projects.",
+            "Implemented algorithms such as Dijkstra's and A* to facilitate pathfinding and obtain optimal directions.",
+            "Utilized GTK toolkit and EZGL graphics package to design GUI and allow interactive display of map."
+          ],
+          date: "2022-12-01"
+        },
+        {
+          title: "Test-bit ARM-like Processor",
+          description: "A 16-bit processor design similar to ARM architecture",
+          image: "/assets/img/cpu.png",
+          tools: ["Verilog", "ModelSim", "Quartus"],
+          details: [
+            "Utilized Verilog to design a 16-bit processor that could do ARM similar instructions like add, sub, and conditional branch.",
+            "Debugged and tested the project using ModelSim with different test cases.",
+            "Created a basic ARM-like number-counting program using the processor on a FPGA with Quartus."
+          ],
+          date: "2023-05-01"
+        },
+        {
+          title: "16-bit ARM-like Processor",
+          description: "A 16-bit processor design similar to ARM architecture",
+          image: "/assets/img/cpu.png",
+          tools: ["Verilog", "ModelSim", "Quartus"],
+          details: [
+            "Utilized Verilog to design a 16-bit processor that could do ARM similar instructions like add, sub, and conditional branch.",
+            "Debugged and tested the project using ModelSim with different test cases.",
+            "Created a basic ARM-like number-counting program using the processor on a FPGA with Quartus."
+          ],
+          date: "2024-05-01"
+        }
+      ];
+      projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      let currentIndex = 0;
+      function displayProject(project) {
+        const projectContainer = document.getElementById('project-container');
+
+        const projectHtml = `
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="${project.title}" src="${project.image}" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">${project.title}<i class="mdi-navigation-more-vert right"></i></span>
+                <p>${project.description}</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> ${project.tools.join(', ')}</li>
+                  ${project.details.map(detail => `<li>${detail}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+        projectContainer.innerHTML += projectHtml;
+      }
+
+      function loadMoreProjects() {
+        displayProject(projects[currentIndex]);
+        currentIndex++;
+      }
+
+      loadMoreProjects();
+
+      const button = document.getElementById('load-more');
+      button.addEventListener('click', loadMoreProjects);
+    </script>
 
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
