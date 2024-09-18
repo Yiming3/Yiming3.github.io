@@ -407,7 +407,7 @@
           date: "2023-05-01"
         },
         {
-          title: "16-bit ARM-like Processor",
+          title: "17-bit ARM-like Processor",
           description: "A 16-bit processor design similar to ARM architecture",
           image: "/assets/img/cpu.png",
           tools: ["Verilog", "ModelSim", "Quartus"],
@@ -416,7 +416,7 @@
             "Debugged and tested the project using ModelSim with different test cases.",
             "Created a basic ARM-like number-counting program using the processor on a FPGA with Quartus."
           ],
-          date: "2024-05-01"
+          date: "2021-05-01"
         }
       ];
       projects.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -449,8 +449,15 @@
       }
 
       function loadMoreProjects() {
-        displayProject(projects[currentIndex]);
-        currentIndex++;
+        if (currentIndex === 0){
+          displayProject(projects[currentIndex]);
+          currentIndex++;
+        }
+        else {
+          for (i=1; i<projects.length; i++) {
+            displayProject(projects[i]);
+          }
+        }
       }
 
       loadMoreProjects();
