@@ -28,6 +28,14 @@
   </kbd>
 </p>
 
+### Places Travelled
+<p align="center"> 
+  <kbd>
+    <a href="https://varadbhogayata.github.io" target="_blank"><img src="assets/img/googlemap.png">
+  </a>
+  </kbd>
+</p>
+
 :star: Star me on GitHub — it helps!
 
 ## Features 📋
