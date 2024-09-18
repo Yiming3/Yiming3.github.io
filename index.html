@@ -380,6 +380,7 @@
       Help me to debug iterating project details
       -->
     <script>
+      // Format by LLM content by myself.
       const projects = [
         {
           title: "Google Maps-like Software",
@@ -439,6 +440,7 @@
                 <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
                 <ul>
                   <li><b>Tools:</b> ${project.tools.join(', ')}</li>
+                  <!-- Helped by LLM -->
                   ${project.details.map(detail => `<li>${detail}</li>`).join('')}
                 </ul>
               </div>
